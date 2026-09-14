@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Effort & The Void</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fefae0; /* Soft warm cream background */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #4a4e69;
+        }
+
+        h1.main-title {
+            color: #2b2d42;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            letter-spacing: 1px;
+        }
+
+        /* Container for cards */
+        .container {
+            display: flex;
+            gap: 25px;
+            width: 90%;
+            max-width: 900px;
+        }
+
+        /* Shared Card Styles with Transition Effects */
+        .card {
+            flex: 1;
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        /* Hover effect to lift the cards smoothly */
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Left Card Theme (Effort) */
+        .card.effort {
+            border-color: #b7e4c7;
+        }
+        .card.effort:hover {
+            border-color: #52b788;
+        }
+
+        /* Right Card Theme (Void) */
+        .card.void {
+            border-color: #ffccd5;
+        }
+        .card.void:hover {
+            border-color: #ff4d6d;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            margin-bottom: 5px;
+            color: #2b2d42;
+        }
+
+        .subtitle-desc {
+            font-style: italic;
+            color: #8d99ae;
+            font-size: 0.95em;
+            margin-bottom: 20px;
+        }
+
+        /* Cute Animated Visual Box */
+        .visual {
+            width: 100%;
+            height: 140px;
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        .card.effort .visual {
+            background-color: #f0fdf4;
+        }
+        
+        .card.void .visual {
+            background-color: #fff1f2;
+        }
+
+        .person {
+            font-size: 3em;
+            transition: transform 0.3s ease;
+        }
+
+        /* Bumping animation effect on hover */
+        .card:hover .person {
+            transform: scale(1.1);
+        }
+
+        .status {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .card.effort .status {
+            color: #2d6a4f;
+        }
+
+        .card.void .status {
+            color: #c9184a;
+        }
+
+        /* Floating pulse effect for emojis */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse-heart {
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="main-title">The Effort & The Void 💭</h1>
+
+    <div class="container">
+        
+        <!-- LEFT SIDE: Effort -->
+        <div class="card effort">
+            <h2>When I Send "Good Night"</h2>
+            <p class="subtitle-desc">Routine Daily Effort</p>
+            
+            <div class="visual">
+                <span class="person">👦🏻</span>
+                <span style="margin: 0 10px;" class="pulse-heart">💌✨</span>
+                <span class="person">👧🏻</span>
+            </div>
+            
+            <p>Daily Input: <b>100% Active</b></p>
+            <p class="status">🟢 Connection Alive</p>
+        </div>
+
+        <!-- RIGHT SIDE: Void -->
+        <div class="card void">
+            <h2>When I Stop Sending</h2>
+            <p class="subtitle-desc">Action: Pause Routine</p>
+            
+            <div class="visual">
+                <span class="person">👦🏻💤</span>
+                <span style="margin: 0 10px; color: #adb5bd;">... 👻 ...</span>
+                <span class="person">📱💬</span>
+            </div>
+            
+            <p>Daily Input: <b>0% From Her</b></p>
+            <p class="status">🔴 System Flatlined (Focus on Others)</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
